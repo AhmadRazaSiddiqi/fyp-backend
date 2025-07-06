@@ -1,9 +1,10 @@
 {
   "name": "fyp-auth-backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "nodemon -q server.js"
+    "start": "node src/server.js",
+    "build": "echo 'Build script not necessary for this project'"
   },
   "keywords": [],
   "author": "",
