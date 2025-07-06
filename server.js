@@ -6,12 +6,12 @@ const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
 const videoRoutes = require("./routes/videos");
 const cloudinaryRoutes = require("./routes/cloudinary");
-const historyRoutes = require('./routes/history');
-const likedVideosRoutes = require('./routes/likedvideos');
-const watchLaterRoutes = require('./routes/watchlater');
-const playlistRoutes = require('./routes/playlists');
-const userRoutes = require('./routes/user');
-const dislikedVideosRoutes = require('./routes/dislikedvideos');
+const historyRoutes = require("./routes/history");
+const likedVideosRoutes = require("./routes/likedvideos");
+const watchLaterRoutes = require("./routes/watchlater");
+const playlistRoutes = require("./routes/playlists");
+const userRoutes = require("./routes/user");
+const dislikedVideosRoutes = require("./routes/dislikedvideos");
 
 // Import utilities and config
 const connectDB = require("./config/database");
@@ -38,12 +38,14 @@ connectDB();
 app.use("/api/auth", authRoutes);
 app.use("/api", videoRoutes);
 app.use("/", cloudinaryRoutes);
-app.use('/api/history', historyRoutes);
-app.use('/api/likedvideos', likedVideosRoutes);
-app.use('/api/watchlater', watchLaterRoutes);
-app.use('/api/playlists', playlistRoutes);
-app.use('/api/user', userRoutes);
-app.use('/api/dislikedvideos', dislikedVideosRoutes);
-
+app.use("/api/history", historyRoutes);
+app.use("/api/likedvideos", likedVideosRoutes);
+app.use("/api/watchlater", watchLaterRoutes);
+app.use("/api/playlists", playlistRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/dislikedvideos", dislikedVideosRoutes);
+app.get("/test", (_, res) => {
+  res.send("Server Is Running");
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
